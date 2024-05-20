@@ -12,7 +12,7 @@ import re
 
 def clean_data():
 
-    df = pd.read_csv("solicitudes_credito.csv", sep=";")
+    df = pd.read_csv("solicitudes_credito.csv", sep=";", index_col=0)
     df.dropna(inplace=True)
     df.fecha_de_beneficio = [datetime.strptime(i, "%d/%m/%Y") if bool(re.search(r"\d{1,2}/\d{2}/\d{4}", i))
                              else datetime.strptime(i, "%Y/%m/%d")
