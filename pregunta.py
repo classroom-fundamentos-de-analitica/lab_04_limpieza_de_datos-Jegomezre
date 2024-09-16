@@ -10,7 +10,7 @@ import pandas as pd
 from datetime import datetime
 import re
 
-def clean_data():
+def clean_data(): 
     df = pd.read_csv("solicitudes_credito.csv", sep=";", index_col=0)
     
     df.dropna(inplace=True)
